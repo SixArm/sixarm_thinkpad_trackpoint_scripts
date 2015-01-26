@@ -1,0 +1,22 @@
+#!/bin/bash
+set -euf -o pipefail
+
+##
+# Find a ThinkPad computer's TrackPoint speed file that sets the pointer speed.
+#
+# From http://zedic.com/thinkpad-trackpoint-speed-linux.html
+#
+# See also http://sourceforge.net/projects/tpctl/
+#
+# See also:
+#
+#     thinkpad-trackpoint-find-device-file-for-sensitivity
+#     thinkpad-trackpoint-find-path-id
+#     thinkpad-trackpoint-set-speed-and-sensitivity-to-fastest
+#
+# Author: Joel Parker Henderson (joel@joelparkerhenderson.com)
+# License: GPL
+# Updated: 2015-01-25
+##
+
+find "/sys/devices/platform/i8042/" -iname speed -type f
